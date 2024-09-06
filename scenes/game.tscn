@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dbnesxnhw5qds"]
+[gd_scene load_steps=18 format=3 uid="uid://dbnesxnhw5qds"]
 
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_igj14"]
 [ext_resource type="PackedScene" uid="uid://0oyc0g345aha" path="res://scenes/player.tscn" id="1_jo1ch"]
@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://ddtt5mi2si78a" path="res://assets/sprites/world_tileset.png" id="3_jsieu"]
 [ext_resource type="PackedScene" uid="uid://b53ro36w4rks" path="res://scenes/platform.tscn" id="4_xgq70"]
 [ext_resource type="PackedScene" uid="uid://bmrc1pqbkax0i" path="res://scenes/coin.tscn" id="5_qffr2"]
-[ext_resource type="PackedScene" uid="uid://cwpgtycp1jlmi" path="res://scenes/killzone.tscn" id="6_kgv3w"]
 [ext_resource type="PackedScene" uid="uid://cmhpg1glfd7u8" path="res://scenes/slime.tscn" id="7_43ys3"]
 [ext_resource type="FontFile" uid="uid://cmx82v1sayg1v" path="res://assets/fonts/PixelOperator8.ttf" id="8_wjav2"]
+[ext_resource type="PackedScene" uid="uid://4srp34gdjpbj" path="res://scenes/Bottom.tscn" id="10_3nekd"]
+[ext_resource type="Script" path="res://scenes/Bottom.gd" id="11_6nhhr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5u1kj"]
 texture = ExtResource("3_jsieu")
@@ -412,9 +413,6 @@ texture = ExtResource("3_jsieu")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5u1kj")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sxyes"]
-distance = -16.0
-
 [sub_resource type="Animation" id="Animation_itx2y"]
 resource_name = "Move"
 length = 1.5
@@ -452,6 +450,8 @@ _data = {
 "Move": SubResource("Animation_itx2y"),
 "RESET": SubResource("Animation_0or8t")
 }
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jhsc0"]
 
 [node name="Game" type="Node2D"]
 
@@ -491,11 +491,14 @@ limit_bottom = 200
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Killzone" parent="." instance=ExtResource("6_kgv3w")]
-position = Vector2(248, 135)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-shape = SubResource("WorldBoundaryShape2D_sxyes")
+[node name="Label" type="Label" parent="Player"]
+offset_left = -131.0
+offset_top = -76.0
+offset_right = -91.0
+offset_bottom = -53.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7g0hk")
+text = "3"
 
 [node name="Coins" type="Node" parent="."]
 
@@ -537,3 +540,11 @@ text = "Space to jump!"
 
 [node name="Slime" parent="." instance=ExtResource("7_43ys3")]
 position = Vector2(-86, -65)
+
+[node name="Bottom" parent="." instance=ExtResource("10_3nekd")]
+position = Vector2(19, 138)
+script = ExtResource("11_6nhhr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(0, 11)
+shape = SubResource("WorldBoundaryShape2D_jhsc0")
