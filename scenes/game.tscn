@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dbnesxnhw5qds"]
+[gd_scene load_steps=18 format=3 uid="uid://dbnesxnhw5qds"]
 
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_igj14"]
 [ext_resource type="PackedScene" uid="uid://0oyc0g345aha" path="res://scenes/player.tscn" id="1_jo1ch"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cwpgtycp1jlmi" path="res://scenes/killzone.tscn" id="6_kgv3w"]
 [ext_resource type="PackedScene" uid="uid://cmhpg1glfd7u8" path="res://scenes/slime.tscn" id="7_43ys3"]
 [ext_resource type="FontFile" uid="uid://cmx82v1sayg1v" path="res://assets/fonts/PixelOperator8.ttf" id="8_wjav2"]
+[ext_resource type="PackedScene" uid="uid://24e8h4y4i3rp" path="res://scenes/pinkslime.tscn" id="11_5mp30"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5u1kj"]
 texture = ExtResource("3_jsieu")
@@ -537,3 +538,8 @@ text = "Space to jump!"
 
 [node name="Slime" parent="." instance=ExtResource("7_43ys3")]
 position = Vector2(-86, -65)
+scale = Vector2(1.00259, 1)
+
+[node name="Pinkslime" parent="." instance=ExtResource("11_5mp30")]
+position = Vector2(-147, -77)
+scale = Vector2(0.857147, 1.04)
