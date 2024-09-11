@@ -1,8 +1,4 @@
-
-[gd_scene load_steps=10 format=3 uid="uid://24e8h4y4i3rp"]
-=======
 [gd_scene load_steps=10 format=3 uid="uid://bxrbqgkxlgih1"]
-
 
 [ext_resource type="Texture2D" uid="uid://bfgcou7d2jcur" path="res://assets/sprites/slime_purple.png" id="1_guxtf"]
 [ext_resource type="Script" path="res://scripts/pinkslime.gd" id="1_orvws"]
@@ -56,11 +52,7 @@ position = Vector2(2, -7)
 scale = Vector2(1.6875, 1.47569)
 sprite_frames = SubResource("SpriteFrames_cbmas")
 autoplay = "default"
-
-frame_progress = 0.21211
-=======
 frame_progress = 0.0303132
-
 
 [node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_khchq")]
 position = Vector2(2.37037, -2.03294)
