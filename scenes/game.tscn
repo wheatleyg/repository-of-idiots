@@ -1,6 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://dbnesxnhw5qds"]
+[gd_scene load_steps=20 format=3 uid="uid://dbnesxnhw5qds"]
 
-[ext_resource type="Script" path="res://scenes/LifeManager.gd" id="1_7m76u"]
+[ext_resource type="Script" path="res://scripts/LifeManager.gd" id="1_7m76u"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_igj14"]
 [ext_resource type="PackedScene" uid="uid://0oyc0g345aha" path="res://scenes/player.tscn" id="1_jo1ch"]
 [ext_resource type="FontFile" uid="uid://dfkob0ep7dgtm" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_7g0hk"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bmrc1pqbkax0i" path="res://scenes/coin.tscn" id="5_qffr2"]
 [ext_resource type="PackedScene" uid="uid://cmhpg1glfd7u8" path="res://scenes/slime.tscn" id="7_43ys3"]
 [ext_resource type="FontFile" uid="uid://cmx82v1sayg1v" path="res://assets/fonts/PixelOperator8.ttf" id="8_wjav2"]
+[ext_resource type="PackedScene" uid="uid://ci7th1cwgew2c" path="res://scenes/bottom.tscn" id="12_2ad8e"]
+[ext_resource type="Script" path="res://scenes/bottom.gd" id="13_4fr33"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5u1kj"]
 texture = ExtResource("3_jsieu")
@@ -451,6 +453,8 @@ _data = {
 "RESET": SubResource("Animation_0or8t")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_10n0b"]
+
 [node name="Game" type="Node2D"]
 
 [node name="LifeManager" type="Node" parent="."]
@@ -523,13 +527,13 @@ position = Vector2(1686, -252)
 position = Vector2(1288, -233)
 
 [node name="Coin6" parent="Coins" instance=ExtResource("5_qffr2")]
-position = Vector2(729, -121)
+position = Vector2(727, -153)
 
 [node name="Coin7" parent="Coins" instance=ExtResource("5_qffr2")]
-position = Vector2(2137, -33)
+position = Vector2(2038, -267)
 
 [node name="Coin8" parent="Coins" instance=ExtResource("5_qffr2")]
-position = Vector2(2234, -33)
+position = Vector2(1910, -250)
 
 [node name="Coin9" parent="Coins" instance=ExtResource("5_qffr2")]
 position = Vector2(3317, -670)
@@ -741,25 +745,25 @@ text = "Space to jump!"
 [node name="Slimes" type="Node" parent="."]
 
 [node name="Slime" parent="Slimes" instance=ExtResource("7_43ys3")]
-position = Vector2(-86, -65)
+position = Vector2(-138, -65)
 
 [node name="Slime2" parent="Slimes" instance=ExtResource("7_43ys3")]
-position = Vector2(1130, -226)
+position = Vector2(1126, -225)
 
 [node name="Slime3" parent="Slimes" instance=ExtResource("7_43ys3")]
-position = Vector2(1508, -97)
+position = Vector2(1414, -225)
 
 [node name="Slime4" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(1242, -245)
 
 [node name="Slime5" parent="Slimes" instance=ExtResource("7_43ys3")]
-position = Vector2(2111, 46)
+position = Vector2(2134, -241)
 
 [node name="Slime6" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(2265, -241)
 
 [node name="Slime7" parent="Slimes" instance=ExtResource("7_43ys3")]
-position = Vector2(1982, -23)
+position = Vector2(2391, -241)
 
 [node name="Slime8" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(1785, -242)
@@ -777,16 +781,16 @@ position = Vector2(3350, -498)
 position = Vector2(3384, -594)
 
 [node name="Slime13" parent="Slimes" instance=ExtResource("7_43ys3")]
-position = Vector2(293, -373)
+position = Vector2(294, -369)
 
 [node name="Slime14" parent="Slimes" instance=ExtResource("7_43ys3")]
-position = Vector2(566, -389)
+position = Vector2(566, -385)
 
 [node name="Slime15" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(219, -370)
 
 [node name="Slime17" parent="Slimes" instance=ExtResource("7_43ys3")]
-position = Vector2(-1542, 4)
+position = Vector2(-986, 127)
 scale = Vector2(0.983306, 1.19865)
 
 [node name="Slime16" parent="Slimes" instance=ExtResource("7_43ys3")]
@@ -794,3 +798,22 @@ position = Vector2(-778, 126)
 
 [node name="Slime18" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(-522, 126)
+
+[node name="Bottom" parent="." instance=ExtResource("12_2ad8e")]
+position = Vector2(182, 149)
+collision_mask = 2
+script = ExtResource("13_4fr33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(108, -10)
+shape = SubResource("WorldBoundaryShape2D_10n0b")
+
+[node name="Timer2" type="Timer" parent="Bottom"]
+wait_time = 0.6
+one_shot = true
+
+[node name="AGONY" type="AudioStreamPlayer" parent="Bottom"]
+stream = ExtResource("2_r5yd6")
+
+[connection signal="body_entered" from="Bottom" to="Bottom" method="_on_body_entered"]
+[connection signal="timeout" from="Bottom/Timer2" to="Bottom" method="_on_timer_2_timeout"]

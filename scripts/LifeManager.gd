@@ -16,3 +16,6 @@ func activate():
 		print("You died.")
 		label.text = ("You died.")
 		death = true
+func DEATH():
+	death = true
+	label.text = ("You died.")

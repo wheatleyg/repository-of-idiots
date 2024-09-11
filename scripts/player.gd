@@ -25,7 +25,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and times_jumped < 2:
 		times_jumped += 1
 		velocity.y = JUMP_VELOCITY
-    jump.play()
+		jump.play()
 
 
 	if Input.is_action_pressed("sprint"):
