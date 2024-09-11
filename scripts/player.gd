@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 130.0
+var SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -25,7 +25,13 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and times_jumped < 2:
 		times_jumped += 1
 		velocity.y = JUMP_VELOCITY
-		jump.play()
+    jump.play()
+
+
+	if Input.is_action_pressed("sprint"):
+		SPEED = 180.0
+	else:
+		SPEED = 130.0
 		
 
 	# Get the input direction and handle the movement/deceleration.
