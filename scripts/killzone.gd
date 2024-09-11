@@ -1,21 +1,18 @@
 extends Area2D
 @onready var timer = $Timer
 @onready var label = get_node("/root/Game/Player/Label")
-var Hearts = 3
-
-
+@onready var agony = %AGONY
+@onready var lifemanager = get_node("/root/Game/LifeManager")
 
 func _on_body_entered(body):
-   if Hearts > 1:
-      Hearts -= 1
-      label.text = str(Hearts)
-   else:
-      label.text = "You died."
-      Engine.time_scale = 0.5
-      timer.start()
-      body.get_node("CollisionShape2D").queue_free()
-
+	print("Collision")
+	lifemanager.activate()
+	if lifemanager.death == true:
+		Engine.time_scale = 0.5
+		body.get_node("CollisionShape2D").queue_free()
+		timer.start()
 
 func _on_timer_timeout():
-   Engine.time_scale = 1.0
-   get_tree().reload_current_scene()
+	Engine.time_scale = 1.0
+	lifemanager.death == false
+	get_tree().reload_current_scene()
