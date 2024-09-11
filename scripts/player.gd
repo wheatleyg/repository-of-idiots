@@ -10,6 +10,7 @@ var times_jumped = 0
 var max_jumps = 2
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var jump = $Jump
 
 
 func _physics_process(delta):
@@ -24,6 +25,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and times_jumped < 2:
 		times_jumped += 1
 		velocity.y = JUMP_VELOCITY
+    jump.play()
+
 
 	if Input.is_action_pressed("sprint"):
 		SPEED = 180.0

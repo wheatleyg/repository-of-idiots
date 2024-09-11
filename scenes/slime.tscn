@@ -53,8 +53,10 @@ autoplay = "default"
 frame_progress = 0.105909
 
 [node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_qodhr")]
+priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
+process_priority = 1
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_8aqnp")
 

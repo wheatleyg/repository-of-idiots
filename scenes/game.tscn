@@ -1,16 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://dbnesxnhw5qds"]
+[gd_scene load_steps=17 format=3 uid="uid://dbnesxnhw5qds"]
 
+[ext_resource type="Script" path="res://scenes/LifeManager.gd" id="1_7m76u"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_igj14"]
 [ext_resource type="PackedScene" uid="uid://0oyc0g345aha" path="res://scenes/player.tscn" id="1_jo1ch"]
 [ext_resource type="FontFile" uid="uid://dfkob0ep7dgtm" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_7g0hk"]
+[ext_resource type="AudioStream" uid="uid://c6n3qrtqumwj2" path="res://assets/sounds/hurt.wav" id="2_r5yd6"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_rioh7"]
 [ext_resource type="Texture2D" uid="uid://ddtt5mi2si78a" path="res://assets/sprites/world_tileset.png" id="3_jsieu"]
 [ext_resource type="PackedScene" uid="uid://b53ro36w4rks" path="res://scenes/platform.tscn" id="4_xgq70"]
 [ext_resource type="PackedScene" uid="uid://bmrc1pqbkax0i" path="res://scenes/coin.tscn" id="5_qffr2"]
 [ext_resource type="PackedScene" uid="uid://cmhpg1glfd7u8" path="res://scenes/slime.tscn" id="7_43ys3"]
 [ext_resource type="FontFile" uid="uid://cmx82v1sayg1v" path="res://assets/fonts/PixelOperator8.ttf" id="8_wjav2"]
-[ext_resource type="PackedScene" uid="uid://ci7th1cwgew2c" path="res://scenes/Bottom.tscn" id="10_um7ug"]
-[ext_resource type="Script" path="res://scenes/Bottom.gd" id="11_fbls8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5u1kj"]
 texture = ExtResource("3_jsieu")
@@ -451,9 +451,14 @@ _data = {
 "RESET": SubResource("Animation_0or8t")
 }
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t2ok8"]
-
 [node name="Game" type="Node2D"]
+
+[node name="LifeManager" type="Node" parent="."]
+script = ExtResource("1_7m76u")
+
+[node name="AGONY" type="AudioStreamPlayer" parent="LifeManager"]
+unique_name_in_owner = true
+stream = ExtResource("2_r5yd6")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -511,6 +516,171 @@ position = Vector2(152, 38)
 [node name="Coin3" parent="Coins" instance=ExtResource("5_qffr2")]
 position = Vector2(329, 36)
 
+[node name="Coin4" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(1686, -252)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(1288, -233)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(729, -121)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(2137, -33)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(2234, -33)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3317, -670)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3349, -664)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3300, -651)
+
+[node name="Coin12" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3370, -649)
+
+[node name="Coin13" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3319, -649)
+
+[node name="Coin14" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3332, -663)
+
+[node name="Coin15" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3339, -648)
+
+[node name="Coin16" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3297, -670)
+
+[node name="Coin17" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3310, -660)
+
+[node name="Coin18" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3351, -650)
+
+[node name="Coin19" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3330, -649)
+
+[node name="Coin20" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3385, -651)
+
+[node name="Coin21" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3367, -665)
+
+[node name="Coin22" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3404, -651)
+
+[node name="Coin23" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3385, -667)
+
+[node name="Coin24" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3393, -669)
+
+[node name="Coin25" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3431, -652)
+
+[node name="Coin26" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3416, -647)
+
+[node name="Coin27" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3451, -649)
+
+[node name="Coin28" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3414, -665)
+
+[node name="Coin29" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3430, -666)
+
+[node name="Coin30" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3445, -664)
+
+[node name="Coin31" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3334, -601)
+
+[node name="Coin32" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3301, -504)
+
+[node name="Coin33" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3257, -539)
+
+[node name="Coin34" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3443, -586)
+
+[node name="Coin35" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3257, -629)
+
+[node name="Coin36" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(3272, -638)
+
+[node name="Coin37" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-154, -72)
+
+[node name="Coin38" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-86, -229)
+
+[node name="Coin39" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-147, -265)
+
+[node name="Coin40" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-22, -278)
+
+[node name="Coin41" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-92, -324)
+
+[node name="Coin42" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(13, -337)
+
+[node name="Coin43" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(115, -333)
+
+[node name="Coin44" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(260, -375)
+
+[node name="Coin45" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(341, -374)
+
+[node name="Coin46" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(519, -391)
+
+[node name="Coin47" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(629, -393)
+
+[node name="Coin48" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-1322, 121)
+
+[node name="Coin49" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-1368, 118)
+
+[node name="Coin50" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-1369, 73)
+
+[node name="Coin51" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-1320, 71)
+
+[node name="Coin52" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-1347, 106)
+
+[node name="Coin53" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-1373, 99)
+
+[node name="Coin54" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-1321, 105)
+
+[node name="Coin55" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-1352, 87)
+
+[node name="Coin56" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-1337, 93)
+
+[node name="Coin57" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-1340, 121)
+
+[node name="Coin58" parent="Coins" instance=ExtResource("5_qffr2")]
+position = Vector2(-1354, 119)
+
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource("4_xgq70")]
@@ -525,6 +695,36 @@ libraries = {
 }
 autoplay = "Move"
 
+[node name="Platform3" parent="Platforms" instance=ExtResource("4_xgq70")]
+position = Vector2(591, -89)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("4_xgq70")]
+position = Vector2(-144, -172)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("4_xgq70")]
+position = Vector2(-118, -172)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("4_xgq70")]
+position = Vector2(-28, -171)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("4_xgq70")]
+position = Vector2(-87, -213)
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("4_xgq70")]
+position = Vector2(-149, -253)
+
+[node name="Platform9" parent="Platforms" instance=ExtResource("4_xgq70")]
+position = Vector2(-19, -262)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("4_xgq70")]
+position = Vector2(115, -311)
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("4_xgq70")]
+position = Vector2(-93, -312)
+
+[node name="Platform12" parent="Platforms" instance=ExtResource("4_xgq70")]
+position = Vector2(15, -319)
+
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
@@ -538,258 +738,59 @@ theme_override_fonts/font = ExtResource("8_wjav2")
 theme_override_font_sizes/font_size = 8
 text = "Space to jump!"
 
-[node name="Slime" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slimes" type="Node" parent="."]
+
+[node name="Slime" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(-86, -65)
 
-[node name="Slime2" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime2" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(1130, -226)
 
-[node name="Slime3" parent="." instance=ExtResource("7_43ys3")]
-position = Vector2(1481, -227)
+[node name="Slime3" parent="Slimes" instance=ExtResource("7_43ys3")]
+position = Vector2(1508, -97)
 
-[node name="Slime4" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime4" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(1242, -245)
 
-[node name="Slime5" parent="." instance=ExtResource("7_43ys3")]
-position = Vector2(2154, -242)
+[node name="Slime5" parent="Slimes" instance=ExtResource("7_43ys3")]
+position = Vector2(2111, 46)
 
-[node name="Slime6" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime6" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(2265, -241)
 
-[node name="Slime7" parent="." instance=ExtResource("7_43ys3")]
-position = Vector2(2090, -243)
+[node name="Slime7" parent="Slimes" instance=ExtResource("7_43ys3")]
+position = Vector2(1982, -23)
 
-[node name="Coin" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(1686, -252)
-
-[node name="Coin2" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(1288, -233)
-
-[node name="Coin3" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(729, -121)
-
-[node name="Coin4" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(2122, -247)
-
-[node name="Coin5" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(2219, -247)
-
-[node name="Slime8" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime8" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(1785, -242)
 
-[node name="Slime9" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime9" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(3271, -593)
 
-[node name="Slime10" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime10" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(3334, -545)
 
-[node name="Slime11" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime11" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(3350, -498)
 
-[node name="Slime12" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime12" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(3384, -594)
 
-[node name="Platform" parent="." instance=ExtResource("4_xgq70")]
-position = Vector2(591, -89)
-
-[node name="Coin6" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3317, -670)
-
-[node name="Coin7" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3349, -664)
-
-[node name="Coin8" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3300, -651)
-
-[node name="Coin9" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3370, -649)
-
-[node name="Coin10" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3319, -649)
-
-[node name="Coin11" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3332, -663)
-
-[node name="Coin12" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3339, -648)
-
-[node name="Coin13" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3297, -670)
-
-[node name="Coin14" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3310, -660)
-
-[node name="Coin15" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3351, -650)
-
-[node name="Coin16" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3330, -649)
-
-[node name="Coin17" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3385, -651)
-
-[node name="Coin18" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3367, -665)
-
-[node name="Coin19" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3404, -651)
-
-[node name="Coin20" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3385, -667)
-
-[node name="Coin21" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3393, -669)
-
-[node name="Coin22" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3431, -652)
-
-[node name="Coin23" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3416, -647)
-
-[node name="Coin24" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3451, -649)
-
-[node name="Coin25" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3414, -665)
-
-[node name="Coin26" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3430, -666)
-
-[node name="Coin27" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3445, -664)
-
-[node name="Coin28" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3334, -601)
-
-[node name="Coin29" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3301, -504)
-
-[node name="Coin30" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3257, -539)
-
-[node name="Coin31" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3443, -586)
-
-[node name="Coin32" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3257, -629)
-
-[node name="Coin33" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(3272, -638)
-
-[node name="Coin34" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-154, -72)
-
-[node name="Platform2" parent="." instance=ExtResource("4_xgq70")]
-position = Vector2(-144, -172)
-
-[node name="Platform3" parent="." instance=ExtResource("4_xgq70")]
-position = Vector2(-118, -172)
-
-[node name="Platform4" parent="." instance=ExtResource("4_xgq70")]
-position = Vector2(-28, -171)
-
-[node name="Platform5" parent="." instance=ExtResource("4_xgq70")]
-position = Vector2(-87, -213)
-
-[node name="Platform6" parent="." instance=ExtResource("4_xgq70")]
-position = Vector2(-149, -253)
-
-[node name="Platform7" parent="." instance=ExtResource("4_xgq70")]
-position = Vector2(-19, -262)
-
-[node name="Platform8" parent="." instance=ExtResource("4_xgq70")]
-position = Vector2(115, -311)
-
-[node name="Platform9" parent="." instance=ExtResource("4_xgq70")]
-position = Vector2(-93, -312)
-
-[node name="Platform10" parent="." instance=ExtResource("4_xgq70")]
-position = Vector2(15, -319)
-
-[node name="Coin35" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-86, -229)
-
-[node name="Coin36" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-147, -265)
-
-[node name="Coin37" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-22, -278)
-
-[node name="Coin38" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-92, -324)
-
-[node name="Coin39" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(13, -337)
-
-[node name="Coin40" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(115, -333)
-
-[node name="Coin41" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(260, -375)
-
-[node name="Coin42" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(341, -374)
-
-[node name="Coin43" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(519, -391)
-
-[node name="Coin44" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(629, -393)
-
-[node name="Slime13" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime13" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(293, -373)
 
-[node name="Slime14" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime14" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(566, -389)
 
-[node name="Slime15" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime15" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(219, -370)
 
-[node name="Slime16" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime17" parent="Slimes" instance=ExtResource("7_43ys3")]
+position = Vector2(-1542, 4)
+scale = Vector2(0.983306, 1.19865)
+
+[node name="Slime16" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(-778, 126)
 
-[node name="Slime17" parent="." instance=ExtResource("7_43ys3")]
-position = Vector2(-1115, 124)
-
-[node name="Slime18" parent="." instance=ExtResource("7_43ys3")]
+[node name="Slime18" parent="Slimes" instance=ExtResource("7_43ys3")]
 position = Vector2(-522, 126)
-
-[node name="Coin45" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-1322, 121)
-
-[node name="Coin46" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-1368, 118)
-
-[node name="Coin47" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-1369, 73)
-
-[node name="Coin48" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-1320, 71)
-
-[node name="Coin49" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-1347, 106)
-
-[node name="Coin50" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-1373, 99)
-
-[node name="Coin51" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-1321, 105)
-
-[node name="Coin52" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-1352, 87)
-
-[node name="Coin53" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-1337, 93)
-
-[node name="Coin54" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-1340, 121)
-
-[node name="Coin55" parent="." instance=ExtResource("5_qffr2")]
-position = Vector2(-1354, 119)
-
-[node name="Bottom" parent="." instance=ExtResource("10_um7ug")]
-position = Vector2(187, 168)
-script = ExtResource("11_fbls8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
-shape = SubResource("WorldBoundaryShape2D_t2ok8")
