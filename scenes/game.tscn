@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dbnesxnhw5qds"]
+[gd_scene load_steps=21 format=3 uid="uid://dbnesxnhw5qds"]
 
 [ext_resource type="Script" path="res://scripts/LifeManager.gd" id="1_7m76u"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_igj14"]
@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bmrc1pqbkax0i" path="res://scenes/coin.tscn" id="5_qffr2"]
 [ext_resource type="PackedScene" uid="uid://cmhpg1glfd7u8" path="res://scenes/slime.tscn" id="7_43ys3"]
 [ext_resource type="FontFile" uid="uid://cmx82v1sayg1v" path="res://assets/fonts/PixelOperator8.ttf" id="8_wjav2"]
-[ext_resource type="PackedScene" uid="uid://ci7th1cwgew2c" path="res://scenes/bottom.tscn" id="12_2ad8e"]
+[ext_resource type="PackedScene" uid="uid://ci7th1cwgew2c" path="res://scenes/Bottom.tscn" id="12_2ad8e"]
 [ext_resource type="Script" path="res://scenes/bottom.gd" id="13_4fr33"]
+[ext_resource type="PackedScene" uid="uid://b5pggaxooiu1v" path="res://scenes/pink_slime_2.tscn" id="14_1x0uh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5u1kj"]
 texture = ExtResource("3_jsieu")
@@ -815,6 +816,9 @@ one_shot = true
 
 [node name="AGONY" type="AudioStreamPlayer" parent="Bottom"]
 stream = ExtResource("2_r5yd6")
+
+[node name="PinkSlime2" parent="." instance=ExtResource("14_1x0uh")]
+position = Vector2(-41, -14)
 
 [connection signal="body_entered" from="Bottom" to="Bottom" method="_on_body_entered"]
 [connection signal="timeout" from="Bottom/Timer2" to="Bottom" method="_on_timer_2_timeout"]
