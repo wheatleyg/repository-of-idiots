@@ -12,17 +12,23 @@ Individual Points:
   -7/10 Josh - slime didn't work
   -7/10 Graceson - need more details than just "overhauled"
   -10/10 Mason
+  -3/10 Franklin - I don't see very much in the commit history from you, although I did see that your menu got reverted and then added.
   5 points for thoughtful reflection added in the README
   -3/5 Josh - only contributions, not reflections
   -3/5 Graceson - only contributions, not reflections
   -5/5 Mason
+  -0/5 Franklin
   5 points for contributing to code reviews in PR’s (not required for solo projects, instead points will come from your reflection)
   -0/5 Josh
   -5/5 Graceson
   -0/5 Mason
+  -0/5 Franklin
 
 Josh		54/70
 Graceson	59/70
 Mason		59/70
+Franklin	47/70
 
 I can't figure out who ZoomTroopo is. They haven't filled out a README in any of their repositories plus I don't see any major contributions beyond adding to the map. I don't even have submission from them for the TD to identify them, so I'm going to count you as a group of 3 for now rather than penalizing the rest of you.
+
+EDIT: I figured out ZoomTroopo is Franklin.
