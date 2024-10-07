@@ -1,0 +1,28 @@
+Team Points:
+  20/20 points for a working platformer with a filled out README
+  16/20 points for having enough sizable changes (4 changes if in a group of 1, 5 changes if in a group of 2, 6 changes if in a group of 3, 8 changes if in a group of 4)
+  -pink slime is broken because the script is missing. other than that, I see sprint, health, sfx, and double jump.
+  8/10 points for following the PR process correctly, including reviewing your teammates’ code (not required for solo projects, instead points will come from having enough changes)
+  -Used PRs a lot, but many changes put directly into the main branch and not very many reviews. Looks like Graceson just checked everything in.
+
+44/50
+
+Individual Points:
+  10 points for contributing features to your game (no hard carries)
+  -7/10 Josh - slime didn't work
+  -7/10 Graceson - need more details than just "overhauled"
+  -10/10 Mason
+  5 points for thoughtful reflection added in the README
+  -3/5 Josh - only contributions, not reflections
+  -3/5 Graceson - only contributions, not reflections
+  -5/5 Mason
+  5 points for contributing to code reviews in PR’s (not required for solo projects, instead points will come from your reflection)
+  -0/5 Josh
+  -5/5 Graceson
+  -0/5 Mason
+
+Josh		54/70
+Graceson	59/70
+Mason		59/70
+
+I can't figure out who ZoomTroopo is. They haven't filled out a README in any of their repositories plus I don't see any major contributions beyond adding to the map. I don't even have submission from them for the TD to identify them, so I'm going to count you as a group of 3 for now rather than penalizing the rest of you.
